@@ -1,0 +1,15 @@
+{%extends 'base.html'%}
+{%block content%}
+
+    <h1>Мои задачи:</h1>
+
+
+{% for task in tasks%}
+<div class="uncompleted_task">
+    <p>published:{{task.created_at}}</p>
+    <h2><a href="">{{task.title}}</a></h2>
+    <p>{{task.description}}</p>
+    <a href="{% url 'task_edit' task.title %}">Редактировать</a>
+</div>
+{%endfor%}
+{%endblock%}
